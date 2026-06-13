@@ -1,0 +1,133 @@
+{
+  "products": [
+    {
+      "name": "Sulfuric Acid",
+      "slug": "sulfuric-acid",
+      "casNumber": "7664-93-9",
+      "unNumber": "UN1830",
+      "category": "acids",
+      "grade": "technical",
+      "description": "High-purity sulfuric acid for industrial applications including metal processing, fertilizer production, and chemical manufacturing. Our sulfuric acid meets international quality standards and is available in various concentrations.",
+      "purityMin": 95,
+      "purityMax": 99.9,
+      "packagingOptions": [
+        {
+          "size": "1",
+          "unit": "L"
+        },
+        {
+          "size": "25",
+          "unit": "L"
+        },
+        {
+          "size": "200",
+          "unit": "L"
+        },
+        {
+          "size": "1",
+          "unit": "MT"
+        }
+      ],
+      "ghsSignalWord": "DANGER",
+      "ghsPictograms": [
+        "GHS03",
+        "GHS05",
+        "GHS09"
+      ],
+      "sdsVersion": "1.0",
+      "sdsIssuedAt": 1707312000000,
+      "applications": [
+        "Metal processing",
+        "Fertilizer production",
+        "Chemical manufacturing",
+        "Battery production",
+        "Oil refining"
+      ],
+      "isPublished": true
+    },
+    {
+      "name": "Acetone",
+      "slug": "acetone",
+      "casNumber": "67-64-1",
+      "unNumber": "UN1090",      
+      "category": "solvents",
+      "grade": "pharmaceutical",
+      "description": "Pure acetone solvent suitable for laboratory, pharmaceutical, and industrial applications. Rapid evaporation makes it ideal for cleaning and extraction processes. Available in pharmaceutical and technical grades.",
+      "purityMin": 99.5,
+      "purityMax": 99.99,
+      "packagingOptions": [
+        {
+          "size": "500",
+          "unit": "mL"
+        },
+        {
+          "size": "1",
+          "unit": "L"
+        },
+        {
+          "size": "5",
+          "unit": "L"
+        },
+        {
+          "size": "25",
+          "unit": "L"
+        }
+      ],
+      "ghsSignalWord": "WARNING",
+      "ghsPictograms": [
+        "GHS02",
+        "GHS07"
+      ],
+      "sdsVersion": "2.1",
+      "sdsIssuedAt": 1704633600000,
+      "applications": [
+        "Laboratory solvent",
+        "Cleaning agent",
+        "Extraction solvent",
+        "Paint thinner",
+        "Pharmaceutical manufacturing"
+      ],
+      "isPublished": true
+    },
+    {
+      "name": "Sodium Hydroxide Pellets",
+      "slug": "sodium-hydroxide-pellets",
+      "casNumber": "1310-73-2",
+      "unNumber": "UN1823",
+      "category": "salts",
+      "grade": "technical",
+      "description": "High-quality sodium hydroxide pellets for water treatment, chemical processing, and manufacturing applications. Our NaOH pellets are pure white, low moisture, and easy to handle. Perfect for laboratories and industrial use.",
+      "purityMin": 98,
+      "purityMax": 99.5,
+      "packagingOptions": [
+        {
+          "size": "25",
+          "unit": "KG"
+        },
+        {
+          "size": "50",
+          "unit": "KG"
+        },
+        {
+          "size": "1",
+          "unit": "MT"
+        }
+      ],
+      "ghsSignalWord": "DANGER",
+      "ghsPictograms": [
+        "GHS05",
+        "GHS07"
+      ],
+      "sdsVersion": "1.5",
+      "sdsIssuedAt": 1706745600000,
+      "applications": [
+        "Water treatment",
+        "Chemical processing",
+        "Soap and detergent production",
+        "Pulp and paper industry",
+        "Metal processing"
+      ],
+      "isPublished": true
+    }
+  ]
+}

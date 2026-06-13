@@ -1,26 +1,300 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*::-webkit-scrollbar{
+  display: none;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+body{
+  background: #0f0f0f;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Page Transition */
+
+.blocks-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.row{
+  flex: 1;
+  width: 100%;
+  display: flex;
+}
+
+.block {
+  position: relative;
+  flex: 1;
+  background: #667067;
+  margin: -0.25px;
+}
+
+.transition-in .block{
+  transform-origin: top;
+}
+
+.transition-out .block{
+  transform-origin: bottom;
+}
+
+/* animated links */
+
+.content__item {
+  list-style: none;
+  margin: 10px 0; 
+}
+
+.link--leda {
+  overflow: hidden;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  transition: color 0.3s ease;
+  color: #fff;
+  line-height: 1.2;
+  height: 22px;
+}
+
+.link--leda[data-text]:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap; 
+  color: transparent; 
+  transition: color 0.3s ease, transform 0.3s ease; 
+  transform: translateY(100%);
+  line-height: 1;
+}
+
+.link--leda span {
+  display: block;
+  transition: transform 0.3s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.link--leda:hover[data-text]:before {
+  color: #fff; 
+  transform: translateY(0); 
+}
+
+.link--leda:hover span {
+  transform: translateY(-100%); 
+}
+
+/* words Effect */
+
+
+.skills {
+  overflow: hidden;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.skill-word {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s ease, transform 1s ease;
+}
+
+.skill-word.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-word.hidden {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+
+
+
+
+
+
+
+/* inter fonts */
+
+.inter-thin {
+  font-family: var(--font-inter), sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+
+.inter-extralight {
+  font-family: var(--font-inter), sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+
+.inter-light {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.inter-regular {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.inter-medium {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.inter-semibold {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.inter-bold {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.inter-extrabold {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.inter-black {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+/* poppins font */
+
+
+.poppins-thin {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 900;
+  font-style: italic;
 }
