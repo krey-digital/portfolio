@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import Navbar from "@/components/partials/Navbar2";
 import Footer from "@/components/Home/Footers";
 import { Transition } from "@/components/PageTransition/Transition";
-import ServiceDetail from "@/components/services/ServiceDetail";
+import MicroNichesSection from "@/components/services/MicroNichesSection";
 import { useServicesContext } from "@/context/ServicesContext";
 import Link from "next/link";
 import LocomotiveScroll from "locomotive-scroll";
@@ -19,6 +19,12 @@ const ServiceCategoryPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     const locomotiveScroll = new LocomotiveScroll();
+    // Expose the Lenis instance globally so modals can stop/start it
+    (window as any)._lenis = (locomotiveScroll as any).lenisInstance ?? locomotiveScroll;
+    return () => {
+      locomotiveScroll.destroy();
+      delete (window as any)._lenis;
+    };
   }, []);
 
   if (!service) {
@@ -69,8 +75,8 @@ const ServiceCategoryPage = () => {
           {/* Divider */}
           <span className="inline-block w-[91%] mx-auto h-[0.1px] opacity-50 md:opacity-15 lg:opacity-50 my-5 bg-white" />
 
-          {/* Sub-services */}
-          <ServiceDetail service={service} />
+          {/* Micro-niches with search */}
+          <MicroNichesSection accent={service.accent} />
         </div>
 
         <Footer />
